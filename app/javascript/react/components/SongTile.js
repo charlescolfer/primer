@@ -6,7 +6,9 @@ const SongTile = props => {
   let song = props.song
   return (
     <div className="columns small-12 medium-6 large-4">
-      <p> hello </p>
+      <audio controls>
+        <source src={song} type="audio/mpeg"/>
+      </audio>
     </div>
   )
 }

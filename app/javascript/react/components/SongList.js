@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 const SongList = props => {
   const [songs, setSongs] = useState([])
 
-  useEffect(() => {fetch("PUT PATH HERE", {
+  useEffect(() => {fetch("/api/v1/songs", {
     credentials: 'same-origin',
     })
     .then((response) => {
@@ -35,7 +35,7 @@ const SongList = props => {
       <h4 className="text-center list-title">Current Songs</h4>
       <hr />
       <ul>
-        {songsList}
+        {songList}
       </ul>
     </div>
   )

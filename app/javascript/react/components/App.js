@@ -5,7 +5,14 @@ import FeedIndexContainer from './FeedIndexContainer'
 import UploadPageContainer from './UploadPageContainer'
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={FeedIndexContainer} />
+      <Route exact path="/songs" component={FeedIndexContainer} />
+      <Route exact path="/songs/new" component={UploadPageContainer} />
+    </Switch>
+  </BrowserRouter>
+  )
 }
-
 export default App
