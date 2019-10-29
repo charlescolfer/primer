@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 const SongList = props => {
   const [songs, setSongs] = useState([])
 
-  useEffect(() => {fetch("/api/v1/breweries", {
+  useEffect(() => {fetch("PUT PATH HERE", {
     credentials: 'same-origin',
     })
     .then((response) => {
