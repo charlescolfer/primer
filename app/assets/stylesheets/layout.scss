@@ -1,5 +1,5 @@
 .top-bar {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.75);
 
   .title {
     font-family: 'Kaushan Script', sans-serif;
@@ -9,8 +9,8 @@
     color: #ffc815;
   }
 
-  li {
-    background-color: black;
+  ul {
+    background-color: rgba(0, 0, 0, .05);
     padding-top: .5em;
     padding-right: 2em;
   }
@@ -18,7 +18,7 @@
   a {
     font-family: 'Kaushan Script';
     color: #ffc815;
-    background-color: black;
+
   }
 
   .sticky {

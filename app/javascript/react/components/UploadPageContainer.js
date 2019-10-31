@@ -47,7 +47,7 @@ const UploadPageContainer = props => {
     body.append("art", formData.art)
     body.append("song", file[0])
     if (validForSubmission()) {
-      fetch("/api/v1/songs", {
+      fetch("/api/v1/songs.json", {
         credentials: 'same-origin',
         method: "POST",
         body: body
@@ -141,7 +141,6 @@ const UploadPageContainer = props => {
             <div className="columns large-6">
               <section>
                 <Dropzone
-                  className="video-uploads"
                   multiple={false}
                   onDrop={file => onDrop(file)}
                 >

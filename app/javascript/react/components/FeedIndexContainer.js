@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import SongTile from './SongTile'
 // debugger
+
 const FeedIndexContainer = props => {
   const [songs, setSongs] = useState([])
-  const [showButton, setShowButton] = useState(false)
   useEffect(() => {fetch("/api/v1/songs", {
     credentials: 'same-origin',
     })
@@ -21,7 +22,6 @@ const FeedIndexContainer = props => {
     .then(response => response.json())
     .then(body => {
       setSongs(body.songs)
-      setShowButton(body.user)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
@@ -39,20 +39,19 @@ const FeedIndexContainer = props => {
     )
   })
 
-  let button = ""
-  if (showButton) {
-    button = <Link to="/songs/new">Upload</Link>
-  }
   return (
     <div className="row text-center feed-box">
-      <p>
-        Primer Song Feed
-      </p>
+      <h2>
+        Comment, Like, Discuss
+      </h2>
       <hr />
       <div className="row">
         {songTiles}
       </div>
-      <div className="text-center row">{button}</div>
+      <div className="button">
+        <Link to="/songs/new"> Upload! </Link>
+      </div>
+
     </div>
   )
 }
