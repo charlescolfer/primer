@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root 'homes#index'
   get '/songs', to: 'homes#index'
   get '/songs/new', to: 'homes#index'
+  get '/drop', to: 'homes#index'
+
 
 
   devise_for :users

@@ -1,28 +1,33 @@
-import React, { useState, useEffect }  from 'react'
+import React, { useState, useEffect, useCallback }  from 'react'
 import { Redirect } from 'react-router-dom'
 import { isEmpty } from 'lodash'
+import Dropzone from 'react-dropzone'
+import { useDropzone } from 'react-dropzone'
 
 import SongList from './SongList'
 
-const StateArray = [ 'AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NE', 'NH', 'NJ',  'NM', 'NV', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VI', 'VT', 'WA', 'WI', 'WV', 'WY' ]
 
 const UploadPageContainer = props => {
   const [shouldRedirect, setShouldRedirect] = useState(false)
   const [errors, setErrors] = useState({})
-  const [newSong, setNewSong] = useState({
+  const [message, setMessage] = useState("")
+  const [file, setFile] = useState([])
+  const [formData, setFormData] = useState({
     song: "",
     title: "",
-    art: "",
-    avatar: "",
-    city: "",
-    state: ""
+    art: ""
   })
 
+  const onDrop = useCallback(acceptedFiles => {
+    setFile(acceptedFiles)
+  }, [])
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+  // debugger;
   const validForSubmission = () => {
     let submitErrors = {}
-    const requiredFields = ["song", "title", "city", "state"]
+    const requiredFields = ["title"]
     requiredFields.forEach(field => {
-      if (newSong[field].trim() === "") {
+      if (formData.title[field] && (formData.title[field]).trim() === "") {
         submitErrors = {
           ...submitErrors,
           [field]: "can't be blank"
@@ -34,17 +39,18 @@ const UploadPageContainer = props => {
     return isEmpty(submitErrors)
   }
 
-  const postNewSong = () => {
+  const postSong = () => {
     event.preventDefault()
+    // debugger
+    let body = new FormData()
+    body.append("title", formData.title)
+    body.append("art", formData.art)
+    body.append("song", file[0])
     if (validForSubmission()) {
       fetch("/api/v1/songs", {
         credentials: 'same-origin',
         method: "POST",
-        body: JSON.stringify(newSong),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        }
+        body: body
       })
       .then(response => {
         if (response.ok) {
@@ -67,110 +73,98 @@ const UploadPageContainer = props => {
     }
   }
 
+  // const onDrop = (file) => {
+  //   if(file.length == 1) {
+  //     setFormData(file)
+  //   } else {
+  //     setMessage("You can only upload one song at a time.")
+  //   }
+  // }
+
   if (shouldRedirect) {
     return <Redirect to='/songs' />
   }
 
   const handleInputChange = event => {
-    setNewSong({
-      ...newSong,
+    setFormData({
+      ...formData,
       [event.currentTarget.name]: event.currentTarget.value
     })
   }
 
+
   const clearForm = event => {
     event.preventDefault()
-    setNewSong({
-      song: "",
+    setFormData({
       title: "",
-      city: "",
-      state: "",
-      art: "",
-      avatar: ""
+      art: ""
     })
     setErrors({})
   }
 
-  const StateOptions = StateArray.map((state) => {
-      return (
-        <option key={state} name={state}>{state}</option>
-      )
-    })
-
   return (
-    <div className="row">
-      <form className="small-12 medium-9 columns" onSubmit={postNewSong}>
-        <h3 className="text-center form-title">New Song Form</h3>
+    <div className="row form-container">
+      <form onSubmit={postSong}>
+        <h3 className="form-title">Upload Your Work in Progress</h3>
         <h5 className="text-center">{errors.user}</h5>
-        <label className="small-12 columns">
-          Name: {errors.name}
-          <input
-            type="text"
-            name="song"
-            value={newSong.song}
-            onChange={handleInputChange}
-          />
-        </label>
 
-        <label className="small-12 columns">
-          Name: {errors.name}
-          <input
-            type="text"
-            name="title"
-            value={newSong.title}
-            onChange={handleInputChange}
-          />
-        </label>
+          <div className="row form-content">
 
-        <label className="small-12 medium-12 large-4 columns">
-          City: {errors.city}
-          <input
-            type="text"
-            name="city"
-            value={newSong.city}
-            onChange={handleInputChange}
-          />
-        </label>
+            <div className="columns large-6">
+              <label>
+                Title: {errors.name}
+                <input
+                  type="text"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleInputChange}
+                />
+              </label>
 
-        <label className="small-12 medium-6 large-4 columns">
-          State: {errors.state}
-          <select name="state" value={newSong.state} onChange={handleInputChange}>
-            <option name=""></option>
-            {StateOptions}
-          </select>
-        </label>
+              <label>
+                Album Artwork: (Optional)
+                <input
+                  type="text"
+                  name="art"
+                  value={formData.art}
+                  onChange={handleInputChange}
+                />
+              </label>
 
-        <label className="small-12 columns">
-          Image URL: (Optional)
-          <input
-            type="text"
-            name="art"
-            value={newSong.art}
-            onChange={handleInputChange}
-          />
-        </label>
+              <div className="text-center buttons">
+                <button className="button" type="submit" value="Add Song"> Add Song </button>
+                <button className="button" onClick={clearForm}>Clear</button>
+              </div>
+            </div>
 
-        <label className="small-12 columns">
-          Image URL: (Optional)
-          <input
-            type="text"
-            name="avatar"
-            value={newSong.avatar}
-            onChange={handleInputChange}
-          />
-        </label>
 
-        <div className="text-center">
-          <input
-            className="button"
-            type="submit"
-            value="Add Song"
-          />
-          <button className="button" onClick={clearForm}>Clear</button>
-        </div>
+            <div className="columns large-6">
+              <section>
+                <Dropzone
+                  className="video-uploads"
+                  multiple={false}
+                  onDrop={file => onDrop(file)}
+                >
+                  {({getRootProps, getInputProps}) => (
+                    <div {...getRootProps()}>
+                      <input {...getInputProps()} />
+                      <p>Click to upload audio / Drag & Drop your audio here</p>
+                    </div>
+                  )}
+                </Dropzone>
+                <aside>
+                  <ul>
+                    {
+                      file.map(file => <li key={file.name}>{file.name} - {file.size} bytes</li>)
+                    }
+                  </ul>
+                </aside>
+              </section>
+            </div>
+          </div>
+
+
       </form>
-
-      <SongsList />
     </div>
   )
 }

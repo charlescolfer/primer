@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import SongTile from './SongTile'
-
+// debugger
 const FeedIndexContainer = props => {
   const [songs, setSongs] = useState([])
   const [showButton, setShowButton] = useState(false)
@@ -44,12 +44,12 @@ const FeedIndexContainer = props => {
     button = <Link to="/songs/new">Upload</Link>
   }
   return (
-    <div>
+    <div className="row text-center feed-box">
       <p>
         Primer Song Feed
       </p>
       <hr />
-      <div>
+      <div className="row">
         {songTiles}
       </div>
       <div className="text-center row">{button}</div>

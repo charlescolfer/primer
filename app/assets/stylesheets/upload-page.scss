@@ -1,0 +1,49 @@
+.form-container {
+  padding: 10em;
+  background-image:	url(https://images.pexels.com/photos/2000885/pexels-photo-2000885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+
+
+  h3.form-title {
+    text-align: center;
+    padding-bottom: .5em;
+    font-family: monospace;
+    border-bottom: 2.5px solid #ffc815;
+  }
+
+  .form-content {
+    padding-top: 1.5em;
+  }
+
+  form {
+    background-color: #E2E2E2;
+    background: rgba(#E2E2E2, .7);
+    padding: 5em;
+    .buttons button {
+      background-color: #ffc815;
+      margin: 0.2em;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+    .buttons button:hover {
+      background-color: #ffffff;
+      color: black;
+      border: 1px solid black;
+      border-radius: 4px;
+
+    }
+  }
+
+    p {
+      height: 200px;
+      border: 1px solid black;
+      border-style: dashed;
+      border-radius: 5px;
+      text-align: center;
+      font-family: monospace;
+      margin: auto;
+      padding-top: 6em;
+      background-color: #BBBBBB;
+    }
+
+}

@@ -5,10 +5,11 @@ const SongTile = props => {
   let art = props.art
   let song = props.song
   return (
-    <div className="columns small-12 medium-6 large-4">
-      <audio controls>
-        <source src={song} type="audio/mpeg"/>
-      </audio>
+    <div className="columns small-12">
+      <p> hello this is the tile </p>
+      // <audio controls>
+      //   <source src={song} type="audio/mpeg"/>
+      // </audio>
     </div>
   )
 }

@@ -36,6 +36,11 @@
     <%= f.text_field :state, autocomplete: "state" %>
   </div>
 
+  <div class="field">
+    <%= f.label :avatar, "Upload Profile Picture", class: "avatar-label" %>
+    <%= f.file_field :avatar %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

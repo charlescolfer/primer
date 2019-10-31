@@ -1,5 +1,6 @@
-class Songs < ApplicationRecord
+class Song < ApplicationRecord
   mount_uploader :song, SongUploader
+
   validates :song, presence: true
   validates :title, presence: true
 

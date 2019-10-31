@@ -10,22 +10,19 @@ class Api::V1::SongsController < ApplicationController
   end
 
   def create
-    if user_signed_in?
-      new_song = Song.new(song_params)
-
-      if new_song.save
-        render json: new_song
-      else
-        render json: new_song.errors
-      end
+    binding.pry
+    new_song = Song.new(song_params)
+    binding.pry
+    if new_song.save
+      render json: new_song
     else
-      render json: {user: "You must be signed into your account to post new content."}
+      render json: new_song.errors
     end
   end
 
   private
 
   def song_params
-    params.require(:song).permit(:song, :title, :count, :art, :avatar)
+    params.permit(:song, :title, :art)
   end
 end

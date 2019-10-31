@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Primer</title>
+  <title className="title">Primer</title>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
@@ -9,8 +10,9 @@
 <body>
 
   <nav class="top-bar">
-    <h1><a href="/">Primer</a></h1>
-
+    <div class="text-center title">
+      <h1><a href="/">Primer</a></h1>
+    </div>
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
