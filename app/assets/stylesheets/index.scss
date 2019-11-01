@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Hammersmith+One&display=swap');
+body {
+  background-image: url(https://images.pexels.com/photos/159206/mixing-table-mixing-music-musician-159206.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-color: black;
+
+}
+
+.feed-box {
+  text-align: center;
+
+  .button {
+    margin-top: 10px;
+    background-color: #ffc815;
+    border: 1px solid white;
+    border-radius: 4px;
+  }
+  a:visited {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+  }
+  
+  .button :hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+
+
+  }
+
+  h2 {
+    font-family: Hammersmith One;
+
+  }
+
+}

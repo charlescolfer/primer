@@ -159,7 +159,7 @@ GEM
       fog-core (~> 2.1)
       fog-json (~> 1.1)
       fog-xml (~> 0.1)
-    fog-core (2.1.0)
+    fog-core (2.1.2)
       builder
       excon (~> 0.58)
       formatador (~> 0.2)
@@ -179,10 +179,10 @@ GEM
     fog-ecloud (0.3.0)
       fog-core
       fog-xml
-    fog-google (1.9.1)
-      fog-core (<= 2.1.0)
-      fog-json (~> 1.2)
-      fog-xml (~> 0.1.0)
+    fog-google (1.7.1)
+      fog-core
+      fog-json
+      fog-xml
       google-api-client (~> 0.23.0)
     fog-internet-archive (0.0.1)
       fog-core
@@ -317,7 +317,7 @@ GEM
     mini_magick (4.9.5)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.12.2)
+    minitest (5.13.0)
     multi_json (1.14.1)
     multipart-post (2.1.1)
     netrc (0.11.0)
@@ -503,7 +503,7 @@ DEPENDENCIES
   webpacker (~> 3.3)
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.6.5p114
 
 BUNDLED WITH
    2.0.2

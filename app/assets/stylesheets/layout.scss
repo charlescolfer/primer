@@ -1,0 +1,30 @@
+.top-bar {
+  background-color: rgba(0, 0, 0, 0.75);
+
+  .title {
+    font-family: 'Kaushan Script', sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 10%;
+    color: #ffc815;
+  }
+
+  ul {
+    background-color: rgba(0, 0, 0, .05);
+    padding-top: .5em;
+    padding-right: 2em;
+  }
+
+  a {
+    font-family: 'Kaushan Script';
+    color: #ffc815;
+
+  }
+
+  .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  }
+
+}
