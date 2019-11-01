@@ -5,13 +5,24 @@ const SongTile = props => {
   let art = props.art
   let song = props.song.url
   let title = props.title
+  let description = props.description
+  let daw = props.daw
   return (
+  <div className="row">
     <div className="columns large-12 tiles">
-      <img className="song-tile-image" src={art}></img>
-      <audio controls className="audio-player">
+      <Link to={`/songs/${props.id}`}>
+        <img className="song-tile-image columns large-3" src={art}></img>
+      </Link>
+      <Link to={`/songs/${props.id}`}>
+        <h3> {title} </h3>
+      </Link>
+      <audio controls className="audio-player columns large-9">
         <source src={song} type="audio/mpeg"/>
       </audio>
+      <p className="columns large-9"> <h6>Description:</h6> {description} </p>
+      <p className="columns large-9"> <h6>Digital Audio Workspace:</h6> {daw} </p>
     </div>
+  </div>
   )
 }
 

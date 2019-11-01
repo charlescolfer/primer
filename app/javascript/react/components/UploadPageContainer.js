@@ -15,7 +15,9 @@ const UploadPageContainer = props => {
   const [formData, setFormData] = useState({
     song: "",
     title: "",
-    art: ""
+    art: "",
+    description: "",
+    daw: ""
   })
 
   const onDrop = useCallback(acceptedFiles => {
@@ -45,6 +47,8 @@ const UploadPageContainer = props => {
     let body = new FormData()
     body.append("title", formData.title)
     body.append("art", formData.art)
+    body.append("description", formData.description)
+    body.append("daw", formData.daw)
     body.append("song", file[0])
     if (validForSubmission()) {
       fetch("/api/v1/songs.json", {
@@ -97,7 +101,9 @@ const UploadPageContainer = props => {
     event.preventDefault()
     setFormData({
       title: "",
-      art: ""
+      art: "",
+      description: "",
+      daw: ""
     })
     setErrors({})
   }
@@ -122,11 +128,31 @@ const UploadPageContainer = props => {
               </label>
 
               <label>
-                Album Artwork: (Optional)
+                Album Artwork: (Copy/Paste a URL of an image to represent your sound)
                 <input
                   type="text"
                   name="art"
                   value={formData.art}
+                  onChange={handleInputChange}
+                />
+              </label>
+
+              <label>
+                Description: (Optional)
+                <input
+                  type="text"
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                />
+              </label>
+
+              <label>
+                Daw (Digital Audio Workspace): (Optional)
+                <input
+                  type="text"
+                  name="daw"
+                  value={formData.daw}
                   onChange={handleInputChange}
                 />
               </label>

@@ -3,11 +3,13 @@ body {
   background-image: url(https://images.pexels.com/photos/159206/mixing-table-mixing-music-musician-159206.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-size: cover;
   background-color: black;
+  margin: auto;
 
 }
 
 .feed-box {
   text-align: center;
+  margin: auto;
 
   .button {
     margin-top: 10px;
@@ -15,25 +17,15 @@ body {
     border: 1px solid white;
     border-radius: 4px;
   }
-  a:visited {
-    background-color: #ffffff;
-    color: black;
-    border: 1px solid black;
-    border-radius: 4px;
-  }
-  
+
   .button :hover {
-    background-color: #ffffff;
-    color: black;
-    border: 1px solid black;
-    border-radius: 4px;
-
-
+    color: white;
   }
 
   h2 {
     font-family: Hammersmith One;
-
+    margin-top: 6px;
+    text-shadow: 1px 1px white;
   }
 
 }
