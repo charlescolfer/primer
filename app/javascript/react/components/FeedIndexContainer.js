@@ -35,6 +35,8 @@ const FeedIndexContainer = props => {
         count={song.count}
         art={song.art}
         avatar={song.avatar}
+        description={song.description}
+        daw={song.daw}
       />
     )
   })
@@ -44,7 +46,6 @@ const FeedIndexContainer = props => {
       <h2>
         Comment, Like, Discuss
       </h2>
-      <hr />
       <div className="row">
         {songTiles}
       </div>

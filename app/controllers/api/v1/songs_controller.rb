@@ -10,7 +10,6 @@ class Api::V1::SongsController < ApplicationController
   end
 
   def create
-    # binding.pry
     new_song = Song.new(song_params)
     new_song.user = current_user
     if new_song.save
@@ -23,6 +22,6 @@ class Api::V1::SongsController < ApplicationController
   private
 
   def song_params
-    params.permit(:song, :title, :art)
+    params.permit(:song, :title, :art, :description, :daw)
   end
 end
