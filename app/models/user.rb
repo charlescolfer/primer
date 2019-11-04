@@ -13,4 +13,5 @@ class User < ApplicationRecord
   validates :state, presence: true
 
   has_many :songs
+  has_many :comments
 end

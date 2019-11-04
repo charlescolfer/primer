@@ -1,4 +1,71 @@
-// body {
-//   background-image: url(https://images.pexels.com/photos/1761362/pexels-photo-1761362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-//   background-size: cover;
-// }
+body {
+  background-image: url(https://images.pexels.com/photos/1761362/pexels-photo-1761362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+}
+
+.notice {
+  margin-top: 12em;
+  margin-left: 28em;
+  margin-right: 24em;
+  margin-bottom: auto;
+  background-color: #E2E2E2;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 2px solid #ffc815;
+  box-shadow: 8px 10px #ffc815;
+  border-radius: 2px;
+  width: 50%;
+  height: 20em;
+  color: white;
+  font-family: monospace;
+
+  .login-side {
+    margin-top: 3em;
+    font-size: 25px;
+    border-right: 1px solid white;
+
+    .login-button {
+      background-color: #ffc815;
+      margin: 0.2em;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+    a{
+      color: black;
+    }
+    .login-button:hover{
+      background-color: #ffffff;
+      border: 1px solid black;
+      border-radius: 4px;
+
+    }
+    a:hover {
+      background-color: #ffffff;
+
+    }
+  }
+
+  .sign-up-side {
+    margin-top: 3em;
+    font-size: 25px;
+
+    .login-button {
+      background-color: #ffc815;
+      margin: 0.2em;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+    a{
+      color: black;
+    }
+    .login-button:hover{
+      background-color: #ffffff;
+      border: 1px solid black;
+      border-radius: 4px;
+
+    }
+    a:hover {
+      background-color: #ffffff;
+
+    }
+  }
+}
