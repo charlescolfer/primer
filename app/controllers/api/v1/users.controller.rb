@@ -2,7 +2,8 @@ class Api::V1::UsersController < ApplicationController
   before_action :authorize_user
 
   def index
-    render json: User.all
+    users = User.all
+    render json: users
   end
 
   protected

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Redirect } from 'react-router-dom'
 
 import SongTile from './SongTile'
-// debugger
 
 const FeedIndexContainer = props => {
   const [songs, setSongs] = useState([])
@@ -29,6 +28,7 @@ const FeedIndexContainer = props => {
   const songTiles = songs.map(song => {
     return(
       <SongTile
+        key={song.id}
         id={song.id}
         song={song.song}
         title={song.title}

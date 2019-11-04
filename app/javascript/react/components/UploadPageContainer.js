@@ -24,7 +24,6 @@ const UploadPageContainer = props => {
     setFile(acceptedFiles)
   }, [])
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
-  // debugger;
   const validForSubmission = () => {
     let submitErrors = {}
     const requiredFields = ["title"]
@@ -43,7 +42,6 @@ const UploadPageContainer = props => {
 
   const postSong = () => {
     event.preventDefault()
-    // debugger
     let body = new FormData()
     body.append("title", formData.title)
     body.append("art", formData.art)

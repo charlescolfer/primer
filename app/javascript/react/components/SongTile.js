@@ -19,8 +19,6 @@ const SongTile = props => {
       <audio controls className="audio-player columns large-9">
         <source src={song} type="audio/mpeg"/>
       </audio>
-      <p className="columns large-9"> <h6>Description:</h6> {description} </p>
-      <p className="columns large-9"> <h6>Digital Audio Workspace:</h6> {daw} </p>
     </div>
   </div>
   )

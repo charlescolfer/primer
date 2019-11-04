@@ -1,0 +1,83 @@
+.entire-page{
+  background-image: url(https://images.pexels.com/photos/159206/mixing-table-mixing-music-musician-159206.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-size: cover;
+  background-color: black;
+  margin: auto;
+
+  .show-box {
+    margin-top: 1em;
+    background-color: #E2E2E2;
+    background: rgba(#E2E2E2, .7);
+    border: 2px solid #ffc815;
+    border-radius: 2px;
+    padding: 5em;
+
+    .album-art {
+      border: 1px solid white;
+      border-radius: 2px;
+      padding: 0;
+      width: 17em;
+      height: 17em;
+      flex-direction: column;
+
+      .daw {
+
+      }
+
+    }
+
+    h6 {
+      margin-top: 1em;
+    }
+
+    .description {
+      margin-top: 1em;
+    }
+
+    .audio-player-show {
+      width: 400px;
+      box-shadow: 20px rgba(0,0, 0, 0.5);
+      border-radius: 90px;
+      transform: scale(.90);
+    }
+    }
+
+    .comment-form {
+      margin-top: 1em;
+      margin-right: 1em;
+      margin-bottom: 1em;
+      background-color: #E2E2E2;
+      background: rgba(#E2E2E2, .7);
+      border: 2px solid #ffc815;
+      border-radius: 2px;
+      padding: 6em;
+      width: 50%;
+      max-height: 20em;
+
+
+    .comment-buttons {
+      margin-left: 4px;
+    }
+    }
+
+    .comment-list {
+      margin-left: 1em;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      justify-content: center;
+      background-color: #E2E2E2;
+      background: rgba(#E2E2E2, .7);
+      border: 2px solid #ffc815;
+      border-radius: 2px;
+      overflow-y: scroll;
+      max-height: 20em;
+
+    .comment {
+      background-color: #E2E2E2;
+      background: rgba(#E2E2E2, .7);
+      margin: 5px;
+      border-radius: 5px;
+      padding: 15px;
+    }
+  }
+}
