@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 const SplashPage = props => {
+
   return (
     <div className="notice column large-12">
       <div className="login-side column large-6 small-6">
