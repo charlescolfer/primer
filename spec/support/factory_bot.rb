@@ -9,5 +9,4 @@ FactoryBot.define do
     city { 'Boston' }
     state { 'MA' }
   end
-
 end

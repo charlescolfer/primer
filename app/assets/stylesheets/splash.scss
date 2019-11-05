@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet");
+
 body {
   background-image: url(https://images.pexels.com/photos/1761362/pexels-photo-1761362.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-size: cover;
@@ -14,9 +16,9 @@ body {
   box-shadow: 8px 10px #ffc815;
   border-radius: 2px;
   width: 50%;
-  height: 20em;
   color: white;
   font-family: monospace;
+  padding-bottom: 3em;
 
   .login-side {
     margin-top: 3em;
@@ -66,6 +68,18 @@ body {
     a:hover {
       background-color: #ffffff;
 
+    }
+  }
+
+  .continue {
+    margin-top: 2.5em;
+
+    text-align: center;
+    font-family: monospace;
+
+    a {
+      color: #ffc815;
+      font-family: 'Kaushan Script', sans-serif;
     }
   }
 }
