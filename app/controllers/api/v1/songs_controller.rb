@@ -2,7 +2,13 @@ class Api::V1::SongsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    render json: { songs: Song.all }
+    if params["user_id"]
+      user = User.find(params["user_id"])
+      songs = user.songs
+    else
+      songs = Song.all
+    end
+    render json: { songs: songs }
   end
 
   def show
