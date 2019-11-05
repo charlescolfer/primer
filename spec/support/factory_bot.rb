@@ -9,12 +9,4 @@ FactoryBot.define do
     city { 'Boston' }
     state { 'MA' }
   end
-
-  factory :song do
-    title { 'song title' }
-    song { 'song.wav' }
-    description { 'this is a description' }
-    daw { 'Logic Pro' }
-  end
-
 end
