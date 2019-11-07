@@ -2,9 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import MySongsTile from './MySongsTile'
+import MapComponent from './MapComponent'
 
 const UserProfile = props => {
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState({
+    avatar: "",
+    city: "",
+    state: "",
+    username: "",
+    latitude: 0,
+    longitude: 0
+  })
   const [songs, setSongs] = useState([])
 
   let userId = props.match.params.id
@@ -61,20 +69,39 @@ const UserProfile = props => {
     )
   })
 
+  // return (
+  //   <div className="whole-page">
+  //       <h1> this is the title </h1>
+  //     <div className="row">
+  //       <div className="columns large-12">
+  //         <MapComponent
+  //           latitude={user.latitude}
+  //           longitude={user.longitude}
+  //           />
+  //         </div>
+  //     </div>
+  //   </div>
+  // )
   return (
     <div className="whole-page">
-      <div className="title row">
-        <h1> this is the title </h1>
+      <div className="username-title row">
+        <h1> {user.username} </h1>
       </div>
       <div className="page row large-12">
         <div className="song-feed column large-9 small-9">
           <p> {songTiles} </p>
         </div>
         <div className="profile-block column large-3 small-3">
-          <img src={user.avatar}/>
+          <img src={user.avatar.url}/>
           <h5> {user.city}, {user.state} </h5>
           <h6> Genre will go here </h6>
           <h6> the about me section will go here! </h6>
+          <MapComponent
+            latitude={user.latitude}
+            longitude={user.longitude}
+            />
+          <div>
+          </div>
           <div className="button">
             <Link to="/songs"> Back to Feed </Link>
           </div>

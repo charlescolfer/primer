@@ -6,6 +6,13 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
+  geocoded_by :address
+  after_validation :geocode
+
+  def address
+    [city, state].compact.join(', ')
+  end
+
   validates :username, presence: true
   validates :password, length: { minimum: 7 }, on: :create
   validates :password, length: { minimum: 7 }, on: :update, allow_blank: true

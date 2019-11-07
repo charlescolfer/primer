@@ -162,7 +162,7 @@ const UploadPageContainer = props => {
             </div>
 
 
-            <div className="columns large-6">
+            <div className="dropzone columns large-6">
               <section>
                 <Dropzone
                   multiple={false}

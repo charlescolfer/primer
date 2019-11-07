@@ -38,6 +38,11 @@
     </div>
 
     <div class="field">
+      <%= f.label :zip, "Zip:" %><br />
+      <%= f.text_field :zip, autocomplete: "zip" %>
+    </div>
+
+    <div class="field">
       <%= f.label :avatar, "Upload Profile Picture", class: "avatar-label" %>
       <%= f.file_field :avatar %>
     </div>
