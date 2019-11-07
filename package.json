@@ -18,6 +18,7 @@
     "@babel/runtime": "^7.6.2",
     "@rails/webpacker": "3.5",
     "babel-loader": "^8.0.6",
+    "google-map-react": "^1.1.5",
     "prop-types": "^15.7.2",
     "react": "~16.8.0",
     "react-audio-spectrum": "^0.1.0",

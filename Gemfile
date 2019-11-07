@@ -56,3 +56,4 @@ gem 'webpacker', '~> 3.3'
 gem 'carrierwave'
 gem 'fog'
 gem 'fog-aws'
+gem "geocoder"
