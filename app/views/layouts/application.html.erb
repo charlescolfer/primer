@@ -13,12 +13,26 @@
     <div class="text-center title">
       <h1><a href="/">Primer</a></h1>
     </div>
+    <div class="search-bar">
+      <%= form_for "/users", url: "/users", method: "GET" do |f| %>
+        <div class="search-bar">
+          <div class="columns large-6 medium-12 small-12">
+            <%= f.text_field :query %>
+          </div>
+          <div class="columns large-6 medium-12 small-12">
+            <%= f.submit "Search", :class => 'search-button' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <section class="top-bar-section">
       <ul class="right">
         <%- if current_user -%>
-          <%- if current_user.avatar? -%>
-            <li><%= image_tag ("#{current_user.avatar}"), class: "avatar" %></li>
-          <%- end -%>
+          <div>
+            <%- if current_user.avatar? -%>
+              <li><%= image_tag ("#{current_user.avatar}"), class: "avatar" %></li>
+            <%- end -%>
+          </div>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>

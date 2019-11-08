@@ -1,9 +1,15 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :authorize_user
+  protect_from_forgery unless: -> { request.format.json? }
+
 
   def index
-    users = User.all
-    users.geocode
+    if params["/users"]
+      if !params
+        users = User.all
+      else
+        users = User.search_by_user(params["/users"][:query])
+      end
+    end
     render json: users
   end
 
@@ -19,5 +25,12 @@ class Api::V1::UsersController < ApplicationController
     if !user_signed_in?
       raise ActionController::RoutingError.new("Must be an signed in")
     end
+  end
+
+
+  private
+
+  def user_params
+    params.permit(:city, :state, :zip, :username)
   end
 end

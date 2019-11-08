@@ -69,19 +69,6 @@ const UserProfile = props => {
     )
   })
 
-  // return (
-  //   <div className="whole-page">
-  //       <h1> this is the title </h1>
-  //     <div className="row">
-  //       <div className="columns large-12">
-  //         <MapComponent
-  //           latitude={user.latitude}
-  //           longitude={user.longitude}
-  //           />
-  //         </div>
-  //     </div>
-  //   </div>
-  // )
   return (
     <div className="whole-page">
       <div className="username-title row">
@@ -96,10 +83,12 @@ const UserProfile = props => {
           <h5> {user.city}, {user.state} </h5>
           <h6> Genre will go here </h6>
           <h6> the about me section will go here! </h6>
+          <div className="map-component">
           <MapComponent
             latitude={user.latitude}
             longitude={user.longitude}
             />
+          </div>
           <div>
           </div>
           <div className="button">

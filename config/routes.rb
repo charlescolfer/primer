@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get '/songs/new', to: 'homes#index'
   get '/songs/:id', to: 'homes#index'
   get '/login', to: 'homes#index'
+  get '/users', to: 'homes#index'
   get '/user/:id', to: 'homes#index'
+  get '/search', to: 'homes#index'
+
 
 
 
