@@ -71,18 +71,16 @@ const UserProfile = props => {
 
   return (
     <div className="whole-page">
-      <div className="username-title row">
-        <h1> {user.username} </h1>
-      </div>
       <div className="page row large-12">
         <div className="song-feed column large-9 small-9">
           <p> {songTiles} </p>
         </div>
         <div className="profile-block column large-3 small-3">
           <img src={user.avatar.url}/>
+          <h2> {user.username} </h2>
           <h5> {user.city}, {user.state} </h5>
-          <h6> Genre will go here </h6>
-          <h6> the about me section will go here! </h6>
+          <h6> {user.genre} </h6>
+          <h6> {user.bio} </h6>
           <div className="map-component">
           <MapComponent
             latitude={user.latitude}

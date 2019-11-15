@@ -13,11 +13,11 @@
     <div class="text-center title">
       <h1><a href="/">Primer</a></h1>
     </div>
-    <div class="search-bar">
+    <div>
       <%= form_for "/users", url: "/users", method: "GET" do |f| %>
         <div class="search-bar">
           <div class="columns large-6 medium-12 small-12">
-            <%= f.text_field :query %>
+            <%= f.text_field :query, :class => 'search-field' %>
           </div>
           <div class="columns large-6 medium-12 small-12">
             <%= f.submit "Search", :class => 'search-button' %>

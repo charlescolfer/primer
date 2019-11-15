@@ -12,15 +12,15 @@ const MapComponent = props => {
   }
 
   return (
-    <div style={{ height: '150px', width: '250px' }}>
+    <div style={{ height: '170px', width: '260px' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: 'AIzaSyDzXT2_FmvtqelpaiY8MD8ykaCC20RB_vw'}}
         defaultCenter={{
-          lat: 55,
-          lng: 55
+          lat: 42.3601,
+          lng: 71.0589
         }}
         center={{lat: latitude, lng: longitude}}
-        defaultZoom={10}
+        defaultZoom={11.5}
       >
       </GoogleMapReact>
     </div>

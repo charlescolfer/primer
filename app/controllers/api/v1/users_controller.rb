@@ -6,6 +6,7 @@ class Api::V1::UsersController < ApplicationController
     if params["/users"]
       if !params
         users = User.all
+        render json: {user: "No results found, here's a list of all users!"}
       else
         users = User.search_by_user(params["/users"][:query])
       end
@@ -31,6 +32,6 @@ class Api::V1::UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:city, :state, :zip, :username)
+    params.permit(:city, :state, :zip, :username, :bio, :genre)
   end
 end

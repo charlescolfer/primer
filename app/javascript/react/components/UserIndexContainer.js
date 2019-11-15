@@ -35,6 +35,7 @@ const UserIndexContainer = props => {
         id={user.id}
         username={user.username}
         avatar={user.avatar}
+        bio={user.bio}
       />
     )
   })

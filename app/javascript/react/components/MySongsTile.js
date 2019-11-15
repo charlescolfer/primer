@@ -10,14 +10,18 @@ const MySongsTile = props => {
   return (
   <div className="post row">
     <div className="columns large-12 tile">
-      <Link to={`/songs/${props.id}`}>
-        <img className="song-tile-image columns large-3" src={art}></img>
-      </Link>
-      <Link to={`/songs/${props.id}`}>
-        <h3> {title} </h3>
+      <div className="columns large-6">
+        <Link to={`/songs/${props.id}`}>
+          <img className="song-tile-image" src={art}></img>
+        </Link>
+      </div>
+      <div className="columns large-6">
+        <Link to={`/songs/${props.id}`}>
+          <h3> {title} </h3>
+        </Link>
         <p> {description} </p>
-      </Link>
-      <audio controls className="audio-player columns large-9">
+      </div>
+      <audio controls className="audio-player center">
         <source src={song} type="audio/mpeg"/>
       </audio>
     </div>

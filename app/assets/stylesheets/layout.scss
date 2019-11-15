@@ -36,6 +36,18 @@
 
   .search-bar {
     margin-top: 6px;
+    display: flex;
+    justify-content: center;
+
+    .search-field {
+      border-radius: 5px;
+      height: 2rem;
+    }
+
+    .search-button {
+      height: 2rem;
+      border-radius: 3px;
+    }
   }
 
 }

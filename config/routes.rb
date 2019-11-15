@@ -16,11 +16,11 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :songs, only: [:index, :create, :show] do
-        resources :comments, only: [:index, :create]
+        resources :comments, only: [:index, :create, :destroy]
       end
       resources :users, only: [:index, :show] do
         resources :songs, only: [:index, :show]
-        resources :comments, only: [:create, :destroy]
+        resources :comments, only: [:create, :destroy, :update]
       end
       resources :comments, only: [:index, :show]
     end
