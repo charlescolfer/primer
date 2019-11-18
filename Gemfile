@@ -58,3 +58,4 @@ gem 'fog'
 gem 'fog-aws'
 gem "geocoder"
 gem "pg_search"
+gem 'bcrypt-ruby'
