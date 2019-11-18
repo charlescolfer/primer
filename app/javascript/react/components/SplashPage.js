@@ -23,7 +23,7 @@ const SplashPage = props => {
         <div className="continue row large-4">
           <h6>
             Already logged in?
-            <a href="/songs"> Go to Dashboad </a>
+            <a href="/songs"> Go to Dashboard </a>
           </h6>
         </div>
       </div>

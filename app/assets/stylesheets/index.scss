@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Hammersmith+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet");
 body {
   background-image: url(https://images.pexels.com/photos/159206/mixing-table-mixing-music-musician-159206.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-size: cover;
@@ -10,22 +10,33 @@ body {
 .feed-box {
   text-align: center;
   margin: auto;
+  background-color: rgba(255, 255, 255, 0.2);
 
   .button {
     margin-top: 10px;
     background-color: #ffc815;
     border: 1px solid white;
     border-radius: 4px;
+    margin-bottom: 40px;
   }
 
-  .button :hover {
+  .button:hover {
     color: white;
   }
 
-  h2 {
-    font-family: Hammersmith One;
-    margin-top: 6px;
-    text-shadow: 1px 1px white;
+  h1 {
+    font-family: 'Kaushan Script', sans-serif;
+    color: #ffc815;
+    margin-top: 35px;
+    margin-left: 40px;
+    text-shadow: 2px 2px black;
+  }
+
+  hr {
+    margin-top: 15px;
+    width: 75%;
+    size: 40px;
+    color: #ffc815;
   }
 
   a {

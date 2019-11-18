@@ -1,0 +1,34 @@
+.background {
+  background-color: rgba(#E2E2E2, .3);
+  overflow-y: scroll;
+
+  .user-tile {
+    max-width: 50%;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    margin-left: 20em;
+    margin-right: 6em;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 1px solid white;
+    border-radius: 8px;
+    color: white;
+    overflow-y: scroll;
+
+    p {
+      color: white;
+      margin-left: 5px;
+      margin-top: 9px;
+    }
+    p:hover{
+      text-decoration: underline;
+    }
+
+    img {
+      margin-top: 3px;
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+  }
+}

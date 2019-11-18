@@ -1,21 +1,30 @@
 .login-page {
-  margin: 35px 250px;
-  background-color: rgba(#ffc815, .7);
+  margin: 35px 450px;
+  background-color: rgba(#ffc815, .9);
   border: 1px solid white;
   border-radius: 10px;
   padding: 60px;
+
+  h2 {
+    margin-top: -10px;
+    margin-bottom: 40px;
+  }
+
+  .field {
+    margin-top: -15px;
+    margin-bottom: 15px;
+
+    em {
+      font-size: 10px;
+    }
+  }
 
   label {
     margin-top: 0px;
     margin-bottom: -10px;
   }
 
-  input {
-    margin-top: -15px;
-    margin-bottom: 15px;
-  }
-
-  em {
+  .avatar-label {
     margin-bottom: 10px;
   }
 }

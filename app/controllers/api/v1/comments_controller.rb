@@ -2,23 +2,29 @@ class Api::V1::CommentsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
+    comments = Comment.all
+    users = User.all
     song = Song.find(params["song_id"])
     user_id = 0
     if current_user
       user_id = current_user.id
     end
-    render json: { comments: song.comments, user_id: user_id }
+    render json: { comments: song.comments, user_id: user_id, users: users}
   end
 
   def create
-    new_comment = Comment.new(comment_params)
-    song = Song.find(params["song_id"])
-    new_comment.song = song
-    new_comment.user = current_user
-    if new_comment.save
-      render json: new_comment
+    if user_signed_in?
+      new_comment = Comment.new(comment_params)
+      song = Song.find(params["song_id"])
+      new_comment.song = song
+      new_comment.user = current_user
+      if new_comment.save
+        render json: new_comment
+      else
+        render json: new_comment.errors
+      end
     else
-      render json: new_comment.errors
+      render json: {user: "You must be signed in to add a review."}
     end
   end
 

@@ -6,6 +6,7 @@ import FeedIndexContainer from './FeedIndexContainer'
 import UploadPageContainer from './UploadPageContainer'
 import SongShowContainer from './SongShowPageContainer'
 import UserProfile from './UserProfile'
+import UserIndexContainer from './UserIndexContainer'
 
 export const App = (props) => {
   return (
@@ -17,6 +18,7 @@ export const App = (props) => {
       <Route exact path="/songs/new" component={UploadPageContainer} />
       <Route exact path="/songs/:id" component={SongShowContainer}/>
       <Route exact path="/user/:id" component={UserProfile}/>
+      <Route exact path="/users" component={UserIndexContainer}/>
     </Switch>
   </BrowserRouter>
   )

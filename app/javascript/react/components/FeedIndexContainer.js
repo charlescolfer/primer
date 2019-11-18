@@ -6,6 +6,7 @@ import SongTile from './SongTile'
 
 const FeedIndexContainer = props => {
   const [songs, setSongs] = useState([])
+  const [users, setUsers] = useState([])
   useEffect(() => {fetch("/api/v1/songs", {
     credentials: 'same-origin',
     })
@@ -21,11 +22,20 @@ const FeedIndexContainer = props => {
     .then(response => response.json())
     .then(body => {
       setSongs(body.songs)
+      setUsers(body.users)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
 
+  let username = ""
+
   const songTiles = songs.map(song => {
+    users.map(user => {
+      if (user.id === song.user_id) {
+        username = user.username
+      }
+
+    })
     return(
       <SongTile
         key={song.id}
@@ -34,18 +44,20 @@ const FeedIndexContainer = props => {
         title={song.title}
         count={song.count}
         art={song.art}
-        avatar={song.avatar}
         description={song.description}
         daw={song.daw}
+        username={username}
+        userId={song.user_id}
       />
     )
   })
 
   return (
     <div className="row text-center feed-box">
-      <h2>
-        Comment, Like, Discuss
-      </h2>
+      <h1>
+        Listen, Comment & Discuss
+      </h1>
+      <hr />
       <div className="row">
         {songTiles}
       </div>

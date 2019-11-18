@@ -1,34 +1,26 @@
 @import url('https://fonts.googleapis.com/css?family=Hammersmith+One&display=swap');
 
-.username-title {
-  text-align: center;
-  margin-top: 8px;
-  color: white;
-  text-shadow: 2px 2px black;
-}
-
 .page {
 
   .song-feed {
     color: white;
     margin-top: 2em;
     margin-bottom: 2em;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.9);
     border: 2px solid white;
     border-radius: 5px;
     margin-left: -40px;
-    max-height: 600px;
+    max-height: 611px;
     box-shadow: 8px 10px #E2E2E2;
     overflow-y: scroll;
 
-    .tile {
+    .post {
       width: 65%;
-      margin-top: 2.5em;
-      margin-bottom: 2.5em;
-      margin-left: 12.5em;
-      margin-right: 6em;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2.3em;
       padding: 17px;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.9);
       border: 1px solid white;
       border-radius: 8px;
 
@@ -59,6 +51,10 @@
         }
 
       }
+
+      .audio-player {
+        margin-top: 12px;
+      }
     }
   }
   .profile-block {
@@ -66,16 +62,21 @@
     border: 2px solid #ffc815;
     margin-top: 2em;
     background-color: #E2E2E2;
-    background: rgba(#E2E2E2, .7);
+    background: rgba(#E2E2E2, .9);
     border-radius: 5px;
     margin-left: -20px;
     margin-right: -60px;
-    max-height: 600px;
+    max-height: 620px;
     padding: 1em;
     overflow-y: scroll;
 
+    h5{
+      margin-top: 6px;
+      font-family: monospace;
+    }
+
     .button {
-      color: white;
+      color: black;
       background-color: #ffc815;
       border: 1px solid white;
       border-radius: 4px;
@@ -83,6 +84,9 @@
       .button :hover {
         color: white;
       }
+    }
+    .map-component {
+      margin-bottom: 1.5em;
     }
   }
 }

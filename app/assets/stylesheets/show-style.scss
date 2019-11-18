@@ -7,39 +7,39 @@
   .show-box {
     margin-top: 1em;
     background-color: #E2E2E2;
-    background: rgba(#E2E2E2, .7);
+    background: rgba(#E2E2E2, .95);
     border: 2px solid #ffc815;
     border-radius: 2px;
     padding: 5em;
 
-    .album-art {
-      border: 1px solid white;
-      border-radius: 2px;
-      padding: 0;
-      width: 17em;
-      height: 17em;
-      flex-direction: column;
-
-      .daw {
-
+      .album-art {
+        border: 1px solid white;
+        border-radius: 2px;
+        padding: 0;
+        width: 17em;
+        height: 17em;
+        flex-direction: column;
+        margin-left: 100px;
+        box-shadow: 50px rgba(0, 0, 0, 0.9);
       }
 
-    }
+      h6 {
+        margin-top: 1em;
+      }
 
-    h6 {
-      margin-top: 1em;
-    }
+      .description {
+        margin-top: 1em;
+        width: 90%;
+      }
 
-    .description {
-      margin-top: 1em;
-    }
-
-    .audio-player-show {
-      width: 400px;
-      box-shadow: 20px rgba(0,0, 0, 0.5);
-      border-radius: 90px;
-      transform: scale(.90);
-    }
+      .audio-player-show {
+        width: 400px;
+        box-shadow: 20px rgba(0,0, 0, 0.5);
+        border-radius: 90px;
+        transform: scale(.90);
+        margin-bottom: 30px;
+        margin-right: 100px;
+      }
     }
 
     .comment-form {
@@ -47,7 +47,7 @@
       margin-right: 1em;
       margin-bottom: 1em;
       background-color: #E2E2E2;
-      background: rgba(#E2E2E2, .7);
+      background: rgba(#E2E2E2, .95);
       border: 2px solid #ffc815;
       border-radius: 2px;
       padding: 6em;
@@ -55,9 +55,16 @@
       max-height: 20em;
 
 
-    .comment-buttons {
-      margin-left: 4px;
-    }
+      .comment-buttons {
+        margin-left: 4px;
+      }
+
+      .button {
+        margin-right: 15px;
+        background-color: #ffc815;
+        border: 1px solid white;
+        border-radius: 4px;
+      }
     }
 
     .comment-list {
@@ -66,18 +73,41 @@
       margin-bottom: 1em;
       justify-content: center;
       background-color: #E2E2E2;
-      background: rgba(#E2E2E2, .7);
+      background: rgba(#E2E2E2, .95);
       border: 2px solid #ffc815;
       border-radius: 2px;
       overflow-y: scroll;
       max-height: 20em;
+      padding: 1em;
 
     .comment {
-      background-color: #E2E2E2;
-      background: rgba(#E2E2E2, .7);
+      background-color: #c7c7c7;
+      background: rgba(#c7c7c7, 1.0);
       margin: 5px;
       border-radius: 5px;
       padding: 15px;
+
+      .username {
+        margin-top: 26px;
+        margin-right: -30px;
+      }
+
+      p {
+        font-size: 18px;
+        color: black;
+      }
+
+      p:hover {
+        text-decoration: underline;
+      }
+
+      .edit-delete {
+        margin-top: 20px;
+        margin-left: 40px;
+        background-color: #ffc815;
+        border: 1px solid white;
+        border-radius: 4px;
+      }
     }
   }
 }

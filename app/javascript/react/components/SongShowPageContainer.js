@@ -4,6 +4,7 @@ import NewCommentContainer from './NewCommentContainer'
 import CommentIndexContainter from './CommentIndexContainer'
 
 const SongShowContainer = props => {
+  const [users, setUsers] = useState([])
   const [post, setPost] = useState ({
     song: "",
     title: "",
@@ -22,6 +23,7 @@ const SongShowContainer = props => {
     messageTest: "",
     refresh: false
   })
+  const [currentUserId, setCurrentUserId] = useState(0)
 
   let songId = props.match.params.id
 
@@ -44,7 +46,7 @@ const SongShowContainer = props => {
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   },[])
 
-    useEffect(() => {fetch(`/api/v1/songs/${songId}/comments`)
+  useEffect(() => {fetch(`/api/v1/songs/${songId}/comments`)
     .then((response) => {
       if (response.ok) {
         return response
@@ -57,6 +59,8 @@ const SongShowContainer = props => {
     .then(response => response.json())
     .then(body => {
       setComments(body.comments)
+      setUsers(body.users)
+      setCurrentUserId(body.user_id)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [message])
@@ -115,6 +119,11 @@ const SongShowContainer = props => {
     }
   }
 
+  const resetPage = () => {
+    setShouldRerender(true)
+  }
+
+
   const handleInputChange = event => {
     setNewComment({
       ...newComment,
@@ -133,21 +142,21 @@ const SongShowContainer = props => {
   return (
     <div className="entire-page">
       <div className="row">
-        <div className="row show-box">
+        <div className="row columns large-12 show-box">
           <div className="columns large-6">
             <img className="album-art" src={post.art}></img>
           </div>
-          <div className="daw">
-            <h6> Produced in: {post.daw} </h6>
-          </div>
-          <div className="columns large-6">
-            <h3> {post.title} </h3>
-            <audio src={post.song.url} type="audio/mpeg" controls className="audio-player-show columns large-9">
-            </audio>
-          </div>
-          <div>
-            <div className="description">
-              <h6> About: {post.description} </h6>
+          <div className="columns large-6 ">
+            <div className="daw">
+              <h6> Produced in: {post.daw} </h6>
+              <h3> {post.title} </h3>
+            </div>
+            <div>
+              <audio src={post.song.url} type="audio/mpeg" controls className="audio-player-show columns large-9">
+              </audio>
+              <div className="description">
+                <h6> About: {post.description} </h6>
+              </div>
             </div>
           </div>
         </div>
@@ -166,9 +175,12 @@ const SongShowContainer = props => {
         />
 
         <CommentIndexContainter
+          resetPage={resetPage}
           songId={songId}
           comments={comments}
           setComments={setComments}
+          users={users}
+          currentUserId={currentUserId}
         />
       </div>
     </div>

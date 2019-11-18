@@ -3,44 +3,26 @@ import React, { useState, useEffect } from 'react'
 import CommentTile from './CommentTile'
 
 const CommentIndexContainter = props => {
-  const [commentId, setCommentId] = useState(0)
-  const [currentUserId, setCurrentUserId] = useState(0)
 
-const deleteComment = (commentId) => {
-  fetch(`/api/v1/songs/${songId}/comments/${commentId}`, {
-    credentials: "same-origin",
-    method: "DELETE",
-    body: JSON.stringify(props.id),
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json"
-    }
-  })
-  .then(response => {
-    if (response.ok) {
-      return response
-    } else {
-      const errorMessage = `${response.status} (${response.statusText})`
-      const error = new Error(errorMessage)
-      throw error
-    }
-  })
-  .then(response => response.json())
-  .then(body => {
-    setMessage(body.message)
-  })
-  .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }
+  let username = ""
 
   const commentTiles = props.comments.map(comment => {
+    props.users.map(user => {
+      if (user.id === comment.user_id) {
+        username = user.username
+      }
+    })
       return(
         <CommentTile
         key={comment.id}
-        id={comment.id}
+        commentId={comment.id}
         body={comment.body}
-        userId={comment.userId}
-        deleteComment={deleteComment}
-        currentUser={currentUserId}
+        userId={comment.user_id}
+        deleteComment={props.deleteComment}
+        currentUser={props.currentUserId}
+        username={username}
+        songId={props.songId}
+        resetPage={props.resetPage}
         />
       )
     }
