@@ -1,4 +1,4 @@
-# PRIMER: A MUSIC APP FOR DISCUSSION AND COLLBORATION
+# PRIMER: A music app for thoughtful discussion and collaboration
  Primer is a platform for musicians of any genre to have an online space and community to show their works in progress, receive constructive criticism, engage in meaningful conversations and find collaborators for future/unfinished products. 
  
 ***Currently working through debugging deployment issues, to demo, see Running Locally***
