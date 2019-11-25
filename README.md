@@ -1,6 +1,7 @@
 # PRIMER: A MUSIC APP FOR DISCUSSION AND COLLBORATION
  Primer is a platform for musicians of any genre to have an online space and community to show their works in progress, receive constructive criticism, engage in meaningful conversations and find collaborators for future/unfinished products. 
- *** Currently working through debugging deployment issues, to demo, see Running Locally ***
+ 
+ # *** Currently working through debugging deployment issues, to demo, see Running Locally ***
 
 # Technologies / APIs
 Ruby 2.6.5
